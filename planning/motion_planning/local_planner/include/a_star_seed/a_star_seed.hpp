@@ -24,7 +24,7 @@
 #include "seed.hpp"
 
 const int DT = 1;
-const int DEBUG = 1;
+const int DEBUG = 0;
 
 namespace navigation {
 
@@ -85,9 +85,11 @@ namespace navigation {
         void plotPointInMap(const State& pos_) ;
         std::vector<StateOfCar> neighborNodesWithSeeds(StateOfCar const& currentStateOfCar_)  ;
         bool onTarget(StateOfCar const& currentStateOfCar_, const StateOfCar& targetState)  ;
-        bool isWalkableWithSeeds(StateOfCar const& startState_, StateOfCar const& nextState_) ;
+        bool isWalkableWithSeeds(StateOfCar const& startState_, StateOfCar const& nextState_, int MAP_MAX_COLS, int MAP_MAX_ROWS) ;
         std::pair<std::vector<StateOfCar>, Seed> reconstructPath(StateOfCar const& currentStateOfCar_,  std::map<StateOfCar,StateOfCar, comparatorMapState>& came_from) ;
         void plotGrid(const State& pos_);
+        int MAP_MAX_COLS;
+        int MAP_MAX_ROWS;
 
         
 
